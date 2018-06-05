@@ -309,10 +309,10 @@ public class Blanket {
 				log.debug(turtleGet.getQueue());
 				for (Torrent torrent : ruTorrent.getTorrents()) {
 					//FIXME colocar tipo de comparação do label
-					if ((StringUtils.isBlank(label) || torrent.getLabel().contains(label)) && torrent.isFinished() && !torrentsAdded.contains(torrent.getId())) {
+					if ((StringUtils.isBlank(label) || torrent.getLabel().contains(label)) && torrent.isFinished() && !torrentsAdded.contains(torrent.getHash())) {
 						String destinationPath = destinationPathOther;
 						log.info(torrent);
-						torrentsAdded.add(torrent.getId());
+						torrentsAdded.add(torrent.getHash());
 						String sourcePath = sourceUrl + torrent.getPath().replace(downloadFolder, "");
 						log.info("Adding Torrent to download");
 						if (sfReleaseGuess.getReleaseType(torrent.getName()).equals(ReleaseType.MOVIE)) {
