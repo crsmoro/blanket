@@ -9,3 +9,5 @@ target
 hs_err_pid*
 /scplayer.iml
 /.idea
+blanket.log
+config.properties
